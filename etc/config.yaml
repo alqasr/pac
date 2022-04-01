@@ -1,0 +1,6 @@
+proxy:
+  port: 3128
+
+  # An empty value [] means accepting all traffic, increasing costs.
+  allowed_domains:
+    - example.com
