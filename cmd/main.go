@@ -51,14 +51,14 @@ func main() {
 	flag.StringVar(&configFile, "config", "pac.yml", "alqasr configuration file path")
 	flag.Parse()
 
-	logger.Printf("loading config file \"%s\"\n", configFile)
+	logger.Printf("loading config file %s\n", configFile)
 
 	cfg, err := config.Load(configFile)
 	if err != nil {
 		logger.Fatal(err)
 	}
 
-	logger.Printf("render proxy.pac using \"%s\"\n", configFile)
+	logger.Printf("render proxy.pac using %s\n", configFile)
 
 	pac, err := render(cfg.Proxy, pac)
 	if err != nil {
