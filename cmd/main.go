@@ -48,7 +48,7 @@ func main() {
 	logger.Println("starting Proxy Auto-Configuration server")
 
 	var configFile string
-	flag.StringVar(&configFile, "config", "config.yml", "alqasr configuration file path")
+	flag.StringVar(&configFile, "config", "pac.yml", "alqasr configuration file path")
 	flag.Parse()
 
 	logger.Printf("loading config file \"%s\"\n", configFile)
