@@ -1,0 +1,29 @@
+builds:
+  - binary: alqasr_pac
+    env:
+      - CGO_ENABLED=0
+    main: ./cmd
+    id: "alqasr_pac"
+    flags:
+      - -trimpath #removes all file system paths from the compiled executable
+    goos:
+      - linux
+      - darwin
+
+archives:
+  - format: zip
+    files:
+      - none*
+
+checksum:
+  name_template: 'checksums.txt'
+
+snapshot:
+  name_template: "{{ incpatch .Version }}-next"
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
